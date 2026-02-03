@@ -1,0 +1,169 @@
+# =========================
+# FIT Automate Blog (MkDocs)
+# =========================
+
+site_name: FIT Automate Blog
+site_description: Forward IT Thinking (FIT) — practical automation, AI, and ops playbooks for SMBs.
+site_author: John Bewley
+
+# IMPORTANT for RSS + canonical URLs + GitHub Pages
+# Example: https://<github-user>.github.io/<repo>/
+site_url: https://blog.forwarditthinking.com/
+
+# If you want the “Edit on GitHub” / repo links
+repo_url: "https://github.com/FITAutomate/fit-blog"
+repo_name: "FITAutomate/fit-blog"
+edit_uri: "edit/main/docs/"
+
+copyright: "Copyright © 2026 Forward IT Thinking"
+
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+# -------------------------
+# Theme (Material)
+# -------------------------
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+
+  # Dark + light toggle
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+
+# Optional: add later if/when you have these files
+#  logo: assets/fit-logo.svg
+#  favicon: assets/favicon.png
+
+# -------------------------
+# Navigation
+# NOTE: With the Material blog plugin, you add ONLY the blog index.
+# Do NOT list individual posts here.
+# -------------------------
+nav:
+  - Home: index.md
+  - Blog:
+      - blog/index.md
+  - Tags: tags.md
+
+# -------------------------
+# Markdown extensions (good defaults for technical posts)
+# -------------------------
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true
+      guess_lang: false
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# -------------------------
+# Plugins
+# -------------------------
+plugins:
+  - search
+
+  # Material built-in blog engine
+  - blog:
+      blog_dir: blog
+      post_dir: blog/posts
+      # Handy defaults; tweak anytime:
+      post_url_format: "{date}/{slug}"
+      archive: true
+      categories: true
+      pagination: true
+      pagination_per_page: 10
+
+  # Material built-in tags
+  - tags:
+      tags_file: tags.md
+
+  # RSS/JSON feeds for blog posts only
+  - rss:
+      match_path: "blog/posts/.*"
+      date_from_meta:
+        as_creation: "rss_meta.created"
+        as_update: "rss_meta.updated"
+      feeds_filenames:
+        rss_created: "rss.xml"
+        json_created: "feed.json"
+
+  # Pretty images/lightbox
+  - glightbox
+
+  # Git-based “last updated” (and creation date support)
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_date
+      fallback_to_build_date: true
+      exclude:
+        - index.md
+        - blog/index.md
+        - tags.md
+
+  # Contributor avatars at bottom (needs repo + branch)
+  - git-committers:
+      enabled: false
+      repository: "<<<YOUR_GH_USER/YOUR_REPO>>>"
+      branch: "main"
+
+  # Minify output HTML
+  - minify:
+      minify_html: true
+
+# -------------------------
+# Extras (optional but nice)
+# -------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      name: Forward IT Thinking on LinkedIn
+      link: "https://www.linkedin.com/in/johnbewley/"
+    - icon: fontawesome/brands/x-twitter
+      name: FIT Automate on X
+      link: "https://x.com/fitautomate"
+
+# If you add custom CSS later:
+extra_css:
+  - "stylesheets/extra.css"

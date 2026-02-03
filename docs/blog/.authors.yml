@@ -1,0 +1,10 @@
+authors:
+  john-bewley:
+    name: John Bewley
+    description: Founder and lead automation strategist.
+    avatar: assets/jb.png
+    url: https://forwarditthinking.com
+  fit-assistant:
+    name: FIT Assistant
+    description: Your AI assistant for spotting automation opportunities.
+    avatar: assets/orb.png

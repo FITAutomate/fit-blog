@@ -1,0 +1,23 @@
+/* Applies to all schemes unless overridden below */
+:root > * {
+    --md-default-bg-color: #F3F4F7;     /* page background */
+    --md-primary-fg-color: #007CE8; /* FIT Blue */
+    --md-accent-fg-color:  #1CD000; /* FIT Green */
+  }
+  
+  /* Dark mode (slate) overrides */
+  [data-md-color-scheme="slate"] {
+    --md-default-bg-color: #00003D;     /* page background */
+    --md-default-fg-color: hsla(0, 0%, 100%, 0.92); /* default text */
+    --md-typeset-a-color:  #1CD000;     /* link color (optional) */
+    --md-footer-bg-color:  #00003D;
+  }
+
+.md-post__profile img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 12px;
+}
+  
