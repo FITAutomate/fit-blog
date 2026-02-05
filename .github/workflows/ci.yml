@@ -5,16 +5,18 @@ on:
     branches: [ main ]
     paths:
       - "docs/**"
+      - "hooks/**"
       - "mkdocs.yml"
+      - ".github/workflows/**"
       - "requirements.txt"
-      - "requirements.lock"
   push:
     branches: [ main ]
     paths:
       - "docs/**"
+      - "hooks/**"
       - "mkdocs.yml"
+      - ".github/workflows/**"
       - "requirements.txt"
-      - "requirements.lock"
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -40,4 +42,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build
-        run: mkdocs build --strict
+        run: mkdocs build

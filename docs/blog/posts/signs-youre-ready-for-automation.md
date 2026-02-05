@@ -7,8 +7,14 @@ authors:
   - fit-assistant
 author: FIT Assistant
 ---
+
 ![Ready for Automation](../../assets/signs-youre-ready-for-automation.webp)
+
 # Three Simple Signs Your Business Is Ready for Automation
+
+## Description
+
+Not sure if automation is right for your business? Here are three clear signals that it's time to let software handle the repetitive work.
 
 Every small business reaches a moment where the old way of working starts to feel… heavy.
 More clicks. More follow-ups. More “Did anyone take care of that?”

@@ -1,17 +1,77 @@
 /* Applies to all schemes unless overridden below */
 :root > * {
-    --md-default-bg-color: #F3F4F7;     /* page background */
-    --md-primary-fg-color: #007CE8; /* FIT Blue */
-    --md-accent-fg-color:  #1CD000; /* FIT Green */
-  }
-  
-  /* Dark mode (slate) overrides */
-  [data-md-color-scheme="slate"] {
-    --md-default-bg-color: #00003D;     /* page background */
-    --md-default-fg-color: hsla(0, 0%, 100%, 0.92); /* default text */
-    --md-typeset-a-color:  #1CD000;     /* link color (optional) */
-    --md-footer-bg-color:  #00003D;
-  }
+  --fit-blue: #007CE8;
+  --fit-blue-deep: #00449B;
+  --fit-green: #1CD000;
+  --fit-ink: #00003D;
+  --fit-paper: #F3F4F7;
+
+  --md-default-bg-color: var(--fit-paper); /* page background */
+  --md-default-fg-color: var(--fit-ink); /* body text */
+  --md-typeset-color: var(--fit-ink); /* content text */
+  --md-typeset-a-color: var(--fit-blue); /* links */
+  --md-primary-fg-color: var(--fit-blue); /* header (light) */
+  --md-primary-bg-color: var(--fit-paper); /* header text/icons */
+  --md-accent-fg-color: var(--fit-green); /* FIT Green */
+  --fit-title-color: var(--fit-blue); /* titles */
+
+  /* Table styling (light) */
+  --fit-table-header-bg: color-mix(in oklab, var(--fit-blue) 10%, var(--fit-paper));
+  --fit-table-row-alt: color-mix(in oklab, var(--fit-blue) 6%, var(--fit-paper));
+  --fit-table-border: color-mix(in oklab, var(--fit-ink) 12%, var(--fit-paper));
+}
+
+/* Dark mode (slate) overrides */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--fit-blue-deep); /* page background */
+  --md-default-fg-color: var(--fit-paper); /* body text */
+  --md-typeset-color: var(--fit-paper); /* content text */
+  --md-typeset-a-color: var(--fit-green); /* links */
+  --md-primary-fg-color: color-mix(in oklab, var(--fit-ink) 90%, var(--fit-paper)); /* header (dark) */
+  --md-primary-bg-color: var(--fit-blue); /* header text/icons */
+  --md-footer-bg-color: var(--fit-ink);
+  --fit-title-color: var(--fit-green); /* titles */
+
+  /* Table styling (dark) */
+  --fit-table-header-bg: color-mix(in oklab, var(--fit-blue) 18%, var(--fit-ink));
+  --fit-table-row-alt: color-mix(in oklab, var(--fit-paper) 6%, var(--fit-ink));
+  --fit-table-border: color-mix(in oklab, var(--fit-paper) 14%, var(--fit-ink));
+}
+
+/* Ensure headings use FIT Blue */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--fit-title-color);
+}
+
+/* Table polish: header + zebra striping + subtle borders */
+.md-typeset table:not([class]) {
+  border-color: var(--fit-table-border);
+}
+
+.md-typeset table:not([class]) thead th {
+  background: var(--fit-table-header-bg);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--fit-table-row-alt);
+}
+
+/* Tag pills */
+.md-tag,
+.md-typeset .md-tag,
+.md-typeset a.md-tag,
+.md-typeset a.md-tag:hover,
+.md-typeset a.md-tag:focus,
+.md-typeset a.md-tag:active {
+  background: color-mix(in oklab, var(--fit-blue) 40%, var(--fit-paper)) !important;
+  color: var(--fit-ink) !important;
+  border-color: var(--fit-green) !important;
+}
 
 .md-post__profile img {
   width: 200px;
@@ -19,5 +79,11 @@
   object-fit: cover;
   border-radius: 12px;
   margin-right: 12px;
+}
+
+/* Logo swap for dark mode */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img,
+[data-md-color-scheme="slate"] .md-nav__title .md-logo img {
+  content: url("../assets/icon-dark.svg");
 }
   

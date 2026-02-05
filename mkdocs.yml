@@ -2,13 +2,17 @@
 # FIT Automate Blog (MkDocs)
 # =========================
 
-site_name: FIT Automate Blog
+site_name: Forward IT Thinking Blog
 site_description: Forward IT Thinking (FIT) — practical automation, AI, and ops playbooks for SMBs.
 site_author: John Bewley
 
 # IMPORTANT for RSS + canonical URLs + GitHub Pages
 # Example: https://<github-user>.github.io/<repo>/
 site_url: https://blog.forwarditthinking.com/
+exclude_docs: |
+  initial-setup.md
+  v2-roadmap.md
+
 
 # If you want the “Edit on GitHub” / repo links
 repo_url: "https://github.com/FITAutomate/fit-blog"
@@ -26,6 +30,10 @@ use_directory_urls: true
 # -------------------------
 theme:
   name: material
+  font:
+    text: Open Sans
+    code: Fira Code
+  logo: "assets/icon.svg"
   language: en
   features:
     - navigation.indexes
@@ -152,6 +160,10 @@ plugins:
   - minify:
       minify_html: true
 
+# Build-time content normalization for blog listing consistency
+hooks:
+  - hooks/blog_index_rules.py
+
 # -------------------------
 # Extras (optional but nice)
 # -------------------------
@@ -167,3 +179,4 @@ extra:
 # If you add custom CSS later:
 extra_css:
   - "stylesheets/extra.css"
+  - "stylesheets/blog-index.css"

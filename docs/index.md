@@ -1,4 +1,4 @@
-# Welcome to the FIT Automate Blog
+# Welcome
 
 ## Automation for the real world, built with human clarity
 

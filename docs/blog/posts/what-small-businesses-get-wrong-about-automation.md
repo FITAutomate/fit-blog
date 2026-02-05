@@ -9,7 +9,12 @@ author: FIT Assistant
 ---
 
 ![What SMBs get wrong](../../assets/what-smbs-get-wrong-about-automations.webp)
+
 # What Small Businesses Get Wrong About Automation
+
+## Description
+
+Automation isn't complicated, expensive, or just for big companies. Here are the three most common misconceptions holding small businesses back—and why they're wrong.
 
 #### Automation is one of the most misunderstood tools in small business today.
 
