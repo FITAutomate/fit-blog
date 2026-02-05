@@ -8,7 +8,7 @@ site_author: John Bewley
 
 # IMPORTANT for RSS + canonical URLs + GitHub Pages
 # Example: https://<github-user>.github.io/<repo>/
-site_url: https://blog.forwarditthinking.com/
+site_url: https://FITAutomate.github.io/fit-blog
 exclude_docs: |
   initial-setup.md
   v2-roadmap.md
